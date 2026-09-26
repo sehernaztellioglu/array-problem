@@ -11,29 +11,34 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        int[] array = new int[100];
-        int enBuyuk = 0;
 
+        System.out.println("array uzunluğunu girin");
+        int arrayInput = Integer.parseInt(scanner.next());
+
+        int[] array = new int[arrayInput];
+
+        System.out.println("kaç adet sayı gireceksiniz");
+        int sayiadetInput = Integer.parseInt(scanner.next());
+
+        int enBuyuk = 0;
         int sayac = 0;
 
-        while (sayac < 100) {
 
-            System.out.println("index giriniz");
-            String input = scanner.next();
 
-            if (input.equals("enough")) {
-                break;
-            }
 
-            int index = Integer.parseInt(input);
 
-            System.out.println("sayı giriniz");
+
+
+
+        while(sayiadetInput >= sayac) {
+
+            System.out.println("indexi girin");
+            int index = Integer.parseInt(scanner.next());
+
+            System.out.println("sayiyi girin");
             int sayi = Integer.parseInt(scanner.next());
 
-
-
-
-            for (int i = 1; i < 100 - index; i++) {
+            for (int i = 1; i < arrayInput - index; i++) {
                 array[index + i] += sayi;
             }
 
@@ -45,12 +50,8 @@ public class Main {
                 }
             }
 
-
+            System.out.println("en büyük sayı" + enBuyuk);
             sayac++;
-
         }
-
-
-        System.out.println(enBuyuk);
     }
 }
